@@ -126,7 +126,7 @@ h1 {
   h1 {
     display: flex;
     flex-wrap: wrap;
-    font-size: 100px !important;
+    font-size: 90px !important;
     margin-top: -20px !important;
     font-family: "Abhaya Libre";
   }
