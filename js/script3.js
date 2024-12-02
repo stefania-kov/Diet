@@ -20,8 +20,6 @@ document.querySelectorAll('button').forEach(button => {
     });
 });
 
-
-
 let totalCalories = 0;
 const form = document.getElementById('food-form');
 
