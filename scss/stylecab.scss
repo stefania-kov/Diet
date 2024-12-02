@@ -1,0 +1,159 @@
+$background-color-footer: #F2ECE9;
+$background-color-body: #FAF8F8;
+$background-color-input: #F5F5F5;
+$background-color-button: #B5DDAE;
+$color-cabinet-link: black;
+$font-family: 'Abhaya Libre';
+
+footer {
+    background-color: $background-color-footer;
+    text-align: center;
+    height: 80px;
+    width: 100%;
+    bottom: 0;
+}
+
+header {
+    background-color: $background-color-footer;
+}
+
+body {
+    background-color: $background-color-body !important;
+    font-size: 40px !important;
+}
+
+input, select {
+    border: 1px solid;
+    border-radius: 20px !important;
+    background-color: $background-color-input !important;
+    margin-left: 100px !important;
+    height: 40px !important;
+    width: 200px !important;
+    margin-top: -5px !important;
+}
+
+button {
+    background: $background-color-button !important; 
+    border-radius: 30px !important;
+    border-color: $background-color-button !important;
+    font-size: 20px !important;
+    font-family: $font-family !important; 
+    font-style: normal !important;
+    margin: 5px !important;
+}
+
+.form-group {
+    display: flex;
+    align-items: center;    
+    width: 500px;
+
+    label {
+        display: block;
+        text-align: left;
+        margin-top: -45px !important;
+        margin-bottom: -20px !important;
+        margin-right: 10px;
+        white-space: nowrap;
+        width: 150px; 
+    }
+
+    input {
+        margin-top: -20px;
+    }
+}
+
+.badge {
+    margin-right: auto;
+    display: block !important;
+}
+
+p {
+    margin-left: -5px;
+}
+
+.cabinet-link {
+    color: $color-cabinet-link !important;
+    text-decoration-line: none !important;
+}
+
+a:hover {
+    text-decoration-line: underline !important;
+    text-decoration-thickness: 9px !important; 
+    text-decoration-color: white !important;
+}
+
+.responsive-icon {
+    width: 16vw;
+    height: auto;
+    margin: 30vh auto 0;
+    display: block;
+    color: $background-color-button !important;
+
+    @media (max-width: 1200px) {
+        width: 19vw;
+        margin-top: 45vh;
+        margin-left: -4vh;
+    }
+    @media (max-width: 900px) {
+        width: 19vw;
+        margin-top: 56vh;
+    }
+    @media (max-width: 810px) {
+        width: 16vw;
+        margin-top: 46vh;
+    }
+    @media (max-width: 767px) {
+        width: 15vw;
+        margin-top: 46vh;
+    }
+    @media (max-width: 680px) {
+        width: 15vw;
+        margin-top: 46vh;
+    }
+    @media (max-width: 576px) {
+        width: 19vw;
+        margin-top: 46vh;
+    }
+}
+
+h1 {
+    font-family: $font-family;
+    font-size: 128px !important;
+
+    @media (max-width: 1000px) {
+        display: flex;
+        flex-wrap: wrap;
+        font-size: 100px !important; 
+        margin-top: -20px !important;
+        font-family: 'Abhaya Libre';
+    }
+}
+
+h2 {
+    margin-top: -20px !important;
+}
+
+.form-inline {
+    display: flex;
+    flex-direction: column; 
+    gap: 10px; 
+}
+
+@media (max-width: 768px) {
+    #personal-form {
+        margin-left: 40px !important; 
+    }
+}
+
+@media (max-width: 576px) {
+    #personal-form {
+        margin-left: 0 !important;
+    }
+}
+
+@media (max-width: 1000px) { 
+    .logo-container {
+    display: flex;
+    flex-direction: column; 
+    }
+}  

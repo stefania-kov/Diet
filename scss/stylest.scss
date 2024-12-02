@@ -1,0 +1,105 @@
+$primary-bg-color: #FAF8F8;
+$footer-bg-color: #F2ECE9;
+$button-bg-color: #B5DDAE;
+$input-bg-color: #F5F5F5;
+
+body {
+  background-color: $primary-bg-color !important;
+  font-size: 40px !important;
+}
+
+header {
+  background-color: $footer-bg-color;
+}
+
+footer {
+  background-color: $footer-bg-color;
+  text-align: center;
+  height: 80px;
+  width: 100%;
+  bottom: 0;
+}
+
+.logo-container {
+  @media (max-width: 1000px) {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+h1 {
+  font-family: 'Abhaya Libre', sans-serif;
+  font-size: 128px !important;
+
+  @media (max-width: 1000px) {
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 100px !important;
+    margin-top: -20px !important;
+    font-family: 'Abhaya Libre';
+  }
+}
+
+.form-group {
+  input {
+    border: 1px solid;
+    border-radius: 20px !important;
+    background-color: $input-bg-color !important;
+    height: 40px !important;
+    margin-top: -5px !important;
+  }
+}
+
+button {
+  background: $button-bg-color !important;
+  border-radius: 30px !important;
+  border-color: $button-bg-color !important;
+  font-size: 20px !important;
+  font-family: 'Abhaya Libre' !important;
+  font-style: normal !important;
+  margin: 5px !important;
+}
+
+.badge {
+  margin-right: auto;
+  display: block !important;
+}
+
+p {
+  margin-left: -5px;
+}
+
+label {
+  display: block; // Метки занимают строку
+  text-align: left; // Выравнивание меток по левому краю
+  margin-top: -45px !important;
+}
+
+a {
+  color: black !important;
+  text-decoration-line: none !important;
+
+  &:hover {
+    text-decoration-line: underline !important;
+    text-decoration-thickness: 9px !important;
+    text-decoration-color: white !important;
+  }
+}
+
+.img-fluid {
+  max-width: 100%;
+  height: auto;
+}
+
+.foto {
+  width: 400px;
+  height: 500px;
+  margin-right: -20px !important;
+}
+
+h2 {
+  font-family: 'Abhaya Libre Medium' !important;
+  font-size: 40px !important;
+  font-style: regular !important;
+  margin-top: -20px !important;
+}
