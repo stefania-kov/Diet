@@ -133,27 +133,27 @@ h2 {
     margin-top: -20px !important;
 }
 
-.form-inline {
-    display: flex;
-    flex-direction: column; 
-    gap: 10px; 
-}
+        .form-inline {
+            display: flex;
+            flex-direction: column; 
+            gap: 10px; 
+        }
 
-@media (max-width: 768px) {
-    #personal-form {
-        margin-left: 40px !important; 
-    }
-}
+        @media (max-width: 768px) {
+            #personal-form {
+                margin-left: 20px !important; 
+            }
+        }
 
-@media (max-width: 576px) {
-    #personal-form {
-        margin-left: 0 !important;
-    }
-}
+        @media (max-width: 576px) {
+            #personal-form {
+                margin-left: 0 !important;
+            }
+        }
 
-@media (max-width: 1000px) { 
-    .logo-container {
-    display: flex;
-    flex-direction: column; 
-    }
-}  
+        @media (max-width: 1000px) { 
+            .logo-container {
+            display: flex;
+            flex-direction: column; 
+            }
+        }  

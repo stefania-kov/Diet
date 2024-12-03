@@ -144,7 +144,7 @@ h2 {
 
 @media (max-width: 768px) {
   #personal-form {
-    margin-left: 40px !important;
+    margin-left: 20px !important;
   }
 }
 @media (max-width: 576px) {
