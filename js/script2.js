@@ -28,7 +28,7 @@ function saveFormData() {
     document.body.removeChild(a);
     URL.revokeObjectURL(url);
 } 
-
+const submitButton = document.getElementById('submit-button'); 
 document.getElementById('submit-button').addEventListener('click', function(event) {
     event.preventDefault(); // Предотвращаем стандартное поведение кнопки
     saveFormData(); // Сохраняем данные формы
