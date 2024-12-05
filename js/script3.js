@@ -29,22 +29,25 @@ form.addEventListener('submit', function(event) {
     const foodName = document.getElementById('food-name').value;
     const foodTime = document.getElementById('food-time').value;
     
-    // Считаем общие калории
     totalCalories += calories;
 
-    // Сохраняем данные в Local Storage
     let foodEntries = JSON.parse(localStorage.getItem('foodEntries')) || [];
     foodEntries.push({ name: foodName, time: foodTime, calories: calories });
     localStorage.setItem('foodEntries', JSON.stringify(foodEntries));
 
-    // Обновляем итоговые калории
     document.getElementById('total-calories').innerText = totalCalories;
 
-    // Сброс формы
+    const blob = new Blob([JSON.stringify(foodEntries, null, 2)], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'formData.json';
+    a.click();
+    URL.revokeObjectURL(url);
+
     form.reset();
 });
 
-// Очистка данных
 document.getElementById('clear-button').addEventListener('click', function() {
     totalCalories = 0;
     document.getElementById('total-calories').innerText = totalCalories;
