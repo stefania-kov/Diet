@@ -7,6 +7,33 @@ document.querySelectorAll('button').forEach(button => {
     });
 });
 
+function saveFormData() {
+    const formData = {
+        name: document.getElementById('name').value,
+        age: document.getElementById('age').value,
+        gender: document.getElementById('gender').value,
+        weight: document.getElementById('weight').value,
+        height: document.getElementById('height').value,
+        active: document.getElementById('active').value,
+    };
+
+    const blob = new Blob([JSON.stringify(formData, null, 2)], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+    
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'formData.json';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+} 
+
+document.getElementById('submit-button').addEventListener('click', function(event) {
+    event.preventDefault(); // Предотвращаем стандартное поведение кнопки
+    saveFormData(); // Сохраняем данные формы
+});
+
 document.addEventListener('DOMContentLoaded', () => {
     const form = document.getElementById('personal-form');
     const submitButton = document.getElementById('submit-button');
