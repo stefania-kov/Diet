@@ -23,6 +23,7 @@ document.querySelectorAll('button').forEach(button => {
 let totalCalories = 0;
 const form = document.getElementById('food-form');
 
+
 form.addEventListener('submit', function(event) {
     event.preventDefault();
     const calories = parseInt(document.getElementById('food-calories').value);
