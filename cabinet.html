@@ -72,50 +72,51 @@
             <button onclick="location.href='d.html'" class="btn btn-light">Дневник питания</button>
         </div> 
         <section>
-            <span class="badge position-absolute top-0 start-5">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-person-circle responsive-icon" viewBox="0 0 16 16">
-                  <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
-                  <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
-                </svg>
-              </span>
-              <form id="personal-form" class="row g-3" style="margin-top: 7%; max-width: 100%;">
-                <div class="col-md-4">
-                    <label for="name"><strong>Никнейм:</strong></label>
-                    <input type="text" id="name" name="name" class="form-control border border-success" required autocomplete="name">
-                </div>
-                <div class="col-md-4">
-                    <label for="age">Возраст:</label>
-                    <input type="number" id="age" name="age" class="form-control border border-success" required autocomplete="age">
-                </div>
-                <div class="col-md-4">
-                    <label for="gender">Пол:</label>
-                    <select id="gender" name="gender" class="form-control border border-success" required autocomplete="gender">
-                        <option value="">Выберите свой пол</option>
-                        <option value="Мужской">Мужской</option>
-                        <option value="Женский">Женский</option>
-                    </select>
-                </div>
-                <div class="col-md-4">
-                    <label for="weight">Вес (кг):</label>
-                    <input type="number" id="weight" name="weight" class="form-control border border-success" required min="0" step="0.1" autocomplete="weight">
-                </div>
-                <div class="col-md-4">
-                    <label for="height">Рост (см):</label>
-                    <input type="number" id="height" name="height" class="form-control border border-success" required min="0" step="0.1" autocomplete="height">
-                </div>
-                <div class="col-md-4">
-                    <label for="active">Активность:</label>
-                    <select id="active" name="active" class="form-control border border-success" required autocomplete="activity">
-                        <option value="">Выберите уровень активности</option>
-                        <option value="Низкая">Низкая</option>
-                        <option value="Средняя">Средняя</option>
-                        <option value="Высокая">Высокая</option>
-                    </select>
-                </div>
-                <div class="col-12 text-center">
-                    <button id="submit-button" class="btn btn-light" style="width: 150px;">Cохранить</button>
-                </div>
-            </form>
+
+<span class="badge position-absolute top-0 start-5">
+    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-person-circle responsive-icon" viewBox="0 0 16 16">
+        <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+        <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
+    </svg>
+</span>
+<form id="personal-form" class="row g-3" style="margin-top: 7%; max-width: 100%;">
+    <div class="col-12 col-md-6 col-lg-4">
+        <label for="name"><strong>Никнейм:</strong></label>
+        <input type="text" id="name" name="name" class="form-control border border-success" required autocomplete="name">
+    </div>
+    <div class="col-12 col-md-6 col-lg-4">
+        <label for="age">Возраст:</label>
+        <input type="number" id="age" name="age" class="form-control border border-success" required autocomplete="age">
+    </div>
+    <div class="col-12 col-md-6 col-lg-4">
+        <label for="gender">Пол:</label>
+        <select id="gender" name="gender" class="form-control border border-success" required autocomplete="gender">
+            <option value="">Выберите свой пол</option>
+            <option value="Мужской">Мужской</option>
+            <option value="Женский">Женский</option>
+        </select>
+    </div>
+    <div class="col-12 col-md-6 col-lg-4">
+        <label for="weight">Вес (кг):</label>
+        <input type="number" id="weight" name="weight" class="form-control border border-success" required min="0" step="0.1" autocomplete="weight">
+    </div>
+    <div class="col-12 col-md-6 col-lg-4">
+        <label for="height">Рост (см):</label>
+        <input type="number" id="height" name="height" class="form-control border border-success" required min="0" step="0.1" autocomplete="height">
+    </div>
+    <div class="col-12 col-md-6 col-lg-4">
+        <label for="active">Активность:</label>
+        <select id="active" name="active" class="form-control border border-success" required autocomplete="activity">
+            <option value="">Выберите уровень активности</option>
+            <option value="Низкая">Низкая</option>
+            <option value="Средняя">Средняя</option>
+            <option value="Высокая">Высокая</option>
+        </select>
+    </div>
+    <div class="col-12 text-center">
+        <button id="submit-button" class="btn btn-light" style="width: 150px;">Cохранить</button>
+    </div>
+</form>
         </main>
             <footer class="mt-4">
                 <div class="container text-center p-4">
