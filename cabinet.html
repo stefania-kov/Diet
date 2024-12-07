@@ -2,7 +2,7 @@
 <html lang="en">  
 <head>  
     <meta charset="UTF-8">  
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Личный Кабинет</title>  
     <link rel="stylesheet" href="stylecab1.css">  
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous"> 
@@ -19,56 +19,10 @@
             <h1>SmartFood</h1>  
         </div>   
     </div>
-    <style>
-        .responsive-icon {
-            width: 16vw;
-            height: auto;
-            margin: 30vh auto 0;
-            display: block;
-            color: #B5DDAE !important;
-        }
-        @media (max-width: 1200px) {
-            .responsive-icon {
-                width: 19vw;
-                margin-top: 45vh;
-                margin-left: -4vh;
-            }
-        }
-        @media (max-width: 900px) {
-            .responsive-icon {
-                width: 19vw;
-                margin-top: 56vh;
-            }
-        }
-        @media (max-width: 810px) {
-            .responsive-icon {
-                width: 16vw;
-                margin-top: 46vh;
-            }
-        }
-        @media (max-width: 767px) {
-            .responsive-icon {
-                width: 15vw;
-                margin-top: 46vh;
-            }
-        }
-        @media (max-width: 680px) {
-            .responsive-icon {
-                width: 15vw;
-                margin-top: 46vh;
-            }
-        }
-        @media (max-width: 576px) {
-            .responsive-icon {
-                width: 19vw;
-                margin-top: 46vh;
-            }
-        }
-        </style>
 </header> 
     <main class="container text-center"> 
         <div class="d-flex justify-content-end mb-3">
-            <button onclick="location.href='main.html'" class="btn btn-light mr-2">Главная</button>
+            <button onclick="location.href='index.html'" class="btn btn-light mr-2">Главная</button>
             <button onclick="location.href='d.html'" class="btn btn-light">Дневник питания</button>
         </div> 
         <section>
@@ -80,15 +34,15 @@
                 </svg>
             </span>
             <form id="personal-form" class="row g-3" style="margin-top: 7%; max-width: 100%;">
-                <div class="col-12 col-md-6 col-lg-4">
+                <div class="col-12 col-md-6">
                     <label for="name"><strong>Никнейм:</strong></label>
                     <input type="text" id="name" name="name" class="form-control border border-success" required autocomplete="name">
                 </div>
-                <div class="col-12 col-md-6 col-lg-4">
+                <div class="col-12 col-md-6">
                     <label for="age">Возраст:</label>
                     <input type="number" id="age" name="age" class="form-control border border-success" required autocomplete="age">
                 </div>
-                <div class="col-12 col-md-6 col-lg-4">
+                <div class="col-12 col-md-6">
                     <label for="gender">Пол:</label>
                     <select id="gender" name="gender" class="form-control border border-success" required autocomplete="gender">
                         <option value="">Выберите свой пол</option>
@@ -96,15 +50,15 @@
                         <option value="Женский">Женский</option>
                     </select>
                 </div>
-                <div class="col-12 col-md-6 col-lg-4">
+                <div class="col-12 col-md-6">
                     <label for="weight">Вес (кг):</label>
                     <input type="number" id="weight" name="weight" class="form-control border border-success" required min="0" step="0.1" autocomplete="weight">
                 </div>
-                <div class="col-12 col-md-6 col-lg-4">
+                <div class="col-12 col-md-6">
                     <label for="height">Рост (см):</label>
                     <input type="number" id="height" name="height" class="form-control border border-success" required min="0" step="0.1" autocomplete="height">
                 </div>
-                <div class="col-12 col-md-6 col-lg-4">
+                <div class="col-12 col-md-6">
                     <label for="active">Активность:</label>
                     <select id="active" name="active" class="form-control border border-success" required autocomplete="activity">
                         <option value="">Выберите уровень активности</option>
@@ -117,6 +71,9 @@
                     <button id="submit-button" class="btn btn-light" style="width: 150px;">Cохранить</button>
                 </div>
             </form>
+            
+            
+
         </main>
             <footer class="mt-4">
                 <div class="container text-center p-4">

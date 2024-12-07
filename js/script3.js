@@ -23,7 +23,6 @@ document.querySelectorAll('button').forEach(button => {
 let totalCalories = 0;
 const form = document.getElementById('food-form');
 
-
 form.addEventListener('submit', function(event) {
     event.preventDefault();
     const calories = parseInt(document.getElementById('food-calories').value);
@@ -34,6 +33,12 @@ form.addEventListener('submit', function(event) {
 
     let foodEntries = JSON.parse(localStorage.getItem('foodEntries')) || [];
     foodEntries.push({ name: foodName, time: foodTime, calories: calories });
+
+    const mealTime = document.querySelector('input[name="meal-time"]:checked');
+    if (mealTime) {
+        foodEntries[foodEntries.length - 1].mealTime = mealTime.value; 
+    }
+
     localStorage.setItem('foodEntries', JSON.stringify(foodEntries));
 
     document.getElementById('total-calories').innerText = totalCalories;
@@ -42,14 +47,9 @@ form.addEventListener('submit', function(event) {
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
     a.href = url;
-    a.download = 'formData.json';
+    a.download = 'dnevnik.json';
+    document.body.appendChild(a);
     a.click();
+    document.body.removeChild(a);
     URL.revokeObjectURL(url);
-
-    form.reset();
-});
-
-document.getElementById('clear-button').addEventListener('click', function() {
-    totalCalories = 0;
-    document.getElementById('total-calories').innerText = totalCalories;
 });

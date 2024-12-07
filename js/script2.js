@@ -28,12 +28,6 @@ function saveFormData() {
     document.body.removeChild(a);
     URL.revokeObjectURL(url);
 } 
-const submitButton = document.getElementById('submit-button'); 
-document.getElementById('submit-button').addEventListener('click', function(event) {
-    event.preventDefault(); // Предотвращаем стандартное поведение кнопки
-    saveFormData(); // Сохраняем данные формы
-});
-
 document.addEventListener('DOMContentLoaded', () => {
     const form = document.getElementById('personal-form');
     const submitButton = document.getElementById('submit-button');
@@ -41,7 +35,6 @@ document.addEventListener('DOMContentLoaded', () => {
     submitButton.addEventListener('click', (event) => {
         event.preventDefault(); 
 
-        // Получаем значения из формы
         const name = document.getElementById('name').value;
         const age = parseInt(document.getElementById('age').value);
         const weight = parseFloat(document.getElementById('weight').value);
@@ -49,13 +42,11 @@ document.addEventListener('DOMContentLoaded', () => {
         const height = parseFloat(document.getElementById('height').value);
         const active = document.getElementById('active').value;
 
-        // Проверяем, что вес и рост положительные
         if (weight < 0 || height < 0) {
             alert("Вес и рост должны быть положительными числами.");
             return;
         }
 
-        // Создаем сообщение
         const message = `
             Имя пользователя: ${name}
             Возраст: ${age}
@@ -65,7 +56,6 @@ document.addEventListener('DOMContentLoaded', () => {
             Активность: ${active}
         `;
 
-        // Выводим сообщение в всплывающем окне
         alert(message);
     });
 });

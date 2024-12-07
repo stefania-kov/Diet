@@ -22,7 +22,7 @@
     </header>  
     <main class="container text-center">
         <div class="d-flex justify-content-end mb-3">
-            <button onclick="location.href='main.html'" class="btn btn-light mr-2">Главная</button>
+            <button onclick="location.href='index.html'" class="btn btn-light mr-2">Главная</button>
         </div>
         <section class="mt-2">
             <h2 class="mb-2">Дневник питания с подсчетом калорий</h2>
@@ -32,9 +32,9 @@
                         <div style="margin-top: -25px;">
                             <label class="form-label">Выберите прием пищи</label>
                             <div class="radio-group" style="margin-top: -15px;">
-                                <label class="me-3"><input type="radio" name="meal-time" value="morning"> <img src="fotos/утро.svg" alt="Завтрак"> Завтрак</label>
-                                <label class="me-3"><input type="radio" name="meal-time" value="afternoon"> <img src="fotos/обед.svg" alt="Обед"> Обед</label>
-                                <label><input type="radio" name="meal-time" value="evening"> <img src="fotos/ужин.svg" alt="Ужин"> Ужин</label>
+                                <label class="me-3"><input type="radio" name="meal-time" value="Завтрак"> <img src="fotos/утро.svg" alt="Завтрак"> Завтрак</label>
+                                <label class="me-3"><input type="radio" name="meal-time" value="Обед"> <img src="fotos/обед.svg" alt="Обед"> Обед</label>
+                                <label><input type="radio" name="meal-time" value="Ужин"> <img src="fotos/ужин.svg" alt="Ужин"> Ужин</label>
                             </div>
                         </div>
         
@@ -51,6 +51,7 @@
                             <input style="margin-top: -5px;" type="number" class="form-control" id="food-calories" required>
                         </div>
                         <button class="btn btn-light" type="submit" style="width: 200px;">Подсчитать калории</button>
+                        <h3 class="mb-2">Результат будет сохранен в файл.</h3>
                         <button class="btn btn-light"  onclick="location.href='2.html'" style="width: 200px;">Посмотреть дневник</button>
                         <button id="clear-button" class="btn btn-light" type="button" style="width: 200px;">Очистить данные</button>
                     </form>

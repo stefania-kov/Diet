@@ -1,3 +1,4 @@
+@charset "UTF-8";
 footer {
   background-color: #F2ECE9;
   text-align: center;
@@ -19,10 +20,9 @@ input, select {
   border: 1px solid;
   border-radius: 20px !important;
   background-color: #F5F5F5 !important;
-  margin-left: 100px !important;
   height: 40px !important;
-  width: 200px !important;
-  margin-top: -5px !important;
+  width: 100%;
+  margin-top: 5px;
 }
 
 button {
@@ -38,19 +38,19 @@ button {
 .form-group {
   display: flex;
   align-items: center;
-  width: 500px;
+  justify-content: space-between;
+  margin-bottom: 15px;
 }
+
 .form-group label {
   display: block;
   text-align: left;
-  margin-top: -45px !important;
-  margin-bottom: -20px !important;
-  margin-right: 10px;
-  white-space: nowrap;
   width: 150px;
 }
+
 .form-group input {
-  margin-top: -20px;
+  margin-top: 0;
+  flex-grow: 1;
 }
 
 .badge {
@@ -74,54 +74,54 @@ a:hover {
 }
 
 .responsive-icon {
-  width: 16vw;
+  width: 8vw; /* Уменьшен размер иконки */
   height: auto;
-  margin: 30vh auto 0;
+  margin: 10vh auto 0; /* Уменьшен верхний отступ */
   display: block;
   color: #B5DDAE !important;
 }
+
 @media (max-width: 1200px) {
   .responsive-icon {
-    width: 19vw;
-    margin-top: 45vh;
-    margin-left: -4vh;
+    width: 10vw; /* Уменьшен размер иконки для меньших экранов */
+    margin-top: 15vh; /* Уменьшен верхний отступ */
   }
 }
 @media (max-width: 900px) {
   .responsive-icon {
-    width: 19vw;
-    margin-top: 56vh;
+    width: 10vw;
+    margin-top: 20vh;
   }
 }
 @media (max-width: 810px) {
   .responsive-icon {
-    width: 16vw;
-    margin-top: 46vh;
+    width: 8vw;
+    margin-top: 18vh;
   }
 }
 @media (max-width: 767px) {
   .responsive-icon {
-    width: 15vw;
-    margin-top: 46vh;
+    width: 8vw;
+    margin-top: 18vh;
   }
 }
 @media (max-width: 680px) {
   .responsive-icon {
-    width: 15vw;
-    margin-top: 46vh;
+    width: 8vw;
+    margin-top: 18vh;
   }
 }
 @media (max-width: 576px) {
   .responsive-icon {
-    width: 19vw;
-    margin-top: 46vh;
+    width: 17vw;
+    margin-top: 40vh;
   }
 }
-
 h1 {
   font-family: "Abhaya Libre";
   font-size: 128px !important;
 }
+
 @media (max-width: 1000px) {
   h1 {
     display: flex;
@@ -131,7 +131,6 @@ h1 {
     font-family: "Abhaya Libre";
   }
 }
-
 h2 {
   margin-top: -20px !important;
 }
