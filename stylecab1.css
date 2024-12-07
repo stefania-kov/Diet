@@ -74,50 +74,49 @@ a:hover {
 }
 
 .responsive-icon {
-  width: 10vw; /* Уменьшен размер иконки */
+  width: 12vw; /* Уменьшенный размер иконки */
   height: auto;
-  margin: 10vh auto 0; /* Уменьшен верхний отступ */
+  margin: 15vh auto 0; /* Уменьшен верхний отступ */
   display: block;
   color: #B5DDAE !important;
 }
 
 @media (max-width: 1200px) {
   .responsive-icon {
-    width: 10vw; /* Уменьшен размер иконки для меньших экранов */
-    margin-top: 15vh; /* Уменьшен верхний отступ */
+    width: 15vw; /* Уменьшен размер иконки для меньших экранов */
+    margin-top: 20vh; /* Уменьшен верхний отступ */
   }
 }
 @media (max-width: 900px) {
   .responsive-icon {
-    width: 10vw;
+    width: 16vw;
     margin-top: 20vh;
   }
 }
 @media (max-width: 810px) {
   .responsive-icon {
-    width: 8vw;
-    margin-top: 18vh;
+    width: 18vw;
+    margin-top: 25vh;
   }
 }
 @media (max-width: 767px) {
   .responsive-icon {
-    width: 8vw;
-    margin-top: 18vh;
+    width: 20vw;
+    margin-top: 30vh;
   }
 }
 @media (max-width: 680px) {
   .responsive-icon {
-    width: 8vw;
-    margin-top: 18vh;
+    width: 20vw;
+    margin-top: 30vh;
   }
 }
 @media (max-width: 576px) {
   .responsive-icon {
-    width: 17vw;
-    margin-top: 40vh;
+    width: 22vw;
+    margin-top: 25vh;
   }
 }
-
 h1 {
   font-family: "Abhaya Libre";
   font-size: 128px !important;
@@ -129,7 +128,6 @@ h1 {
     flex-wrap: wrap;
     font-size: 85px !important;
     margin-top: -20px !important;
-    font-family: "Abhaya Libre";
   }
 }
 h2 {
