@@ -74,7 +74,7 @@ a:hover {
 }
 
 .responsive-icon {
-  width: 8vw; /* Уменьшен размер иконки */
+  width: 10чvw; /* Уменьшен размер иконки */
   height: auto;
   margin: 10vh auto 0; /* Уменьшен верхний отступ */
   display: block;
