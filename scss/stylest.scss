@@ -40,15 +40,6 @@ h1 {
   }
 }
 
-.form-group {
-  input {
-    border: 1px solid;
-    border-radius: 20px !important;
-    background-color: $input-bg-color !important;
-    height: 40px !important;
-    margin-top: -5px !important;
-  }
-}
 
 button {
   background: $button-bg-color !important;
@@ -60,19 +51,9 @@ button {
   margin: 5px !important;
 }
 
-.badge {
-  margin-right: auto;
-  display: block !important;
-}
 
 p {
   margin-left: -5px;
-}
-
-label {
-  display: block; // Метки занимают строку
-  text-align: left; // Выравнивание меток по левому краю
-  margin-top: -45px !important;
 }
 
 a {
