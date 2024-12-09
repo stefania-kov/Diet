@@ -5,7 +5,7 @@ document.querySelectorAll('button').forEach(button => {
     button.addEventListener('mouseout', function() {
         this.style.transform = 'scale(1)';
     });
-});
+});;
 
 document.addEventListener('DOMContentLoaded', () => {
     const form = document.getElementById('personal-form');
@@ -25,6 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
             alert("Пожалуйста, убедитесь, что вес, рост и возраст все являются положительными числами.");
             return;
         }
+        
 
         const message = `
             Имя пользователя: ${name}
