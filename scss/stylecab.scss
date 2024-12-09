@@ -1,23 +1,38 @@
+$background-color: #FAF8F8 !important;
+$footer-background-color: #F2ECE9;
+$button-background: #B5DDAE !important;
+$border-radius: 20px !important;
+$font-family: "Abhaya Libre";
+
+@mixin flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin responsive-font-size($size) {
+    font-size: $size !important;
+}
+
+body {
+    background-color: $background-color;
+    @include responsive-font-size(40px);
+}
+
+header, footer {
+    background-color: $footer-background-color;
+}
+
 footer {
-    background-color: #F2ECE9;
     text-align: center;
     height: 80px;
     width: 100%;
     bottom: 0;
 }
 
-header {
-    background-color: #F2ECE9;
-}
-
-body {
-    background-color: #FAF8F8 !important;
-    font-size: 40px !important;
-}
-
 input, select {
     border: 1px solid;
-    border-radius: 20px !important;
+    border-radius: $border-radius;
     background-color: #F5F5F5 !important;
     height: 40px !important;
     width: 100%;
@@ -25,31 +40,28 @@ input, select {
 }
 
 button {
-    background: #B5DDAE !important;
+    background: $button-background;
     border-radius: 30px !important;
-    border-color: #B5DDAE !important;
-    font-size: 20px !important;
-    font-family: "Abhaya Libre" !important;
-    font-style: normal !important;
+    border-color: $button-background;
+    @include responsive-font-size(20px);
+    font-family: $font-family;
     margin: 5px !important;
 }
 
 .form-group {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    @include flex-center;
     margin-bottom: 15px;
-}
 
-.form-group label {
-    display: block;
-    text-align: left;
-    width: 150px;
-}
+    label {
+        display: block;
+        text-align: left;
+        width: 150px;
+    }
 
-.form-group input {
-    margin-top: 0;
-    flex-grow: 1;
+    input {
+        margin-top: 0;
+        flex-grow: 1;
+    }
 }
 
 .badge {
@@ -66,12 +78,12 @@ p {
 .cabinet-link {
     color: black !important;
     text-decoration-line: none !important;
-}
 
-a:hover {
-    text-decoration-line: underline !important;
-    text-decoration-thickness: 9px !important;
-    text-decoration-color: white !important;
+    &:hover {
+        text-decoration-line: underline !important;
+        text-decoration-thickness: 9px !important;
+        text-decoration-color: white !important;
+    }
 }
 
 .responsive-icon {
@@ -79,21 +91,16 @@ a:hover {
     height: auto;
     margin: 0vh auto 0; 
     display: block;
-    color: #B5DDAE !important;
+    color: $button-background;
 }
 
 h1 {
-    font-family: "Abhaya Libre";
-    font-size: 128px !important;
-}
+    font-family: $font-family;
+    @include responsive-font-size(128px);
 
-@media (max-width: 1000px) {
-    h1 {
-        display: flex;
-        flex-wrap: wrap;
-        font-size: 85px !important;
+    @media (max-width: 1000px) {
+        @include responsive-font-size(85px);
         margin-top: -20px !important;
-        font-family: "Abhaya Libre";
     }
 }
 
@@ -125,4 +132,5 @@ h2 {
         flex-direction: column;
     }
 }
+
 

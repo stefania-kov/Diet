@@ -1,18 +1,17 @@
-footer {
+body {
+  background-color: #FAF8F8 !important;
+  font-size: 40px !important;
+}
+
+header, footer {
   background-color: #F2ECE9;
+}
+
+footer {
   text-align: center;
   height: 80px;
   width: 100%;
   bottom: 0;
-}
-
-header {
-  background-color: #F2ECE9;
-}
-
-body {
-  background-color: #FAF8F8 !important;
-  font-size: 40px !important;
 }
 
 input, select {
@@ -29,24 +28,21 @@ button {
   border-radius: 30px !important;
   border-color: #B5DDAE !important;
   font-size: 20px !important;
-  font-family: "Abhaya Libre" !important;
-  font-style: normal !important;
+  font-family: "Abhaya Libre";
   margin: 5px !important;
 }
 
 .form-group {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   margin-bottom: 15px;
 }
-
 .form-group label {
   display: block;
   text-align: left;
   width: 150px;
 }
-
 .form-group input {
   margin-top: 0;
   flex-grow: 1;
@@ -67,8 +63,7 @@ p {
   color: black !important;
   text-decoration-line: none !important;
 }
-
-a:hover {
+.cabinet-link:hover {
   text-decoration-line: underline !important;
   text-decoration-thickness: 9px !important;
   text-decoration-color: white !important;
@@ -86,16 +81,13 @@ h1 {
   font-family: "Abhaya Libre";
   font-size: 128px !important;
 }
-
 @media (max-width: 1000px) {
   h1 {
-    display: flex;
-    flex-wrap: wrap;
     font-size: 85px !important;
     margin-top: -20px !important;
-    font-family: "Abhaya Libre";
   }
 }
+
 h2 {
   margin-top: -20px !important;
 }
