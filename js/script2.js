@@ -7,27 +7,6 @@ document.querySelectorAll('button').forEach(button => {
     });
 });
 
-function saveFormData() {
-    const formData = {
-        name: document.getElementById('name').value,
-        age: document.getElementById('age').value,
-        gender: document.getElementById('gender').value,
-        weight: document.getElementById('weight').value,
-        height: document.getElementById('height').value,
-        active: document.getElementById('active').value,
-    };
-
-    const blob = new Blob([JSON.stringify(formData, null, 2)], { type: 'application/json' });
-    const url = URL.createObjectURL(blob);
-    
-    const a = document.createElement('a');
-    a.href = url;
-    a.download = 'formData.json';
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
-    URL.revokeObjectURL(url);
-} 
 document.addEventListener('DOMContentLoaded', () => {
     const form = document.getElementById('personal-form');
     const submitButton = document.getElementById('submit-button');
@@ -42,8 +21,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const height = parseFloat(document.getElementById('height').value);
         const active = document.getElementById('active').value;
 
-        if (weight < 0 || height < 0) {
-            alert("Вес и рост должны быть положительными числами.");
+        if (weight < 0 || height < 0 || age < 0) {
+            alert("Пожалуйста, убедитесь, что вес, рост и возраст все являются положительными числами.");
             return;
         }
 
