@@ -21,12 +21,11 @@ document.addEventListener('DOMContentLoaded', () => {
         const height = parseFloat(document.getElementById('height').value);
         const active = document.getElementById('active').value;
 
-        if (weight < 0 || height < 0 || age < 0) {
-            alert("Пожалуйста, убедитесь, что вес, рост и возраст все являются положительными числами.");
+        if (weight <= 0 || height <= 0 || age <= 0) {
+            alert("Пожалуйста, убедитесь, что вес, рост и возраст больше нуля.");
             return;
         }
         
-
         const message = `
             Имя пользователя: ${name}
             Возраст: ${age}
