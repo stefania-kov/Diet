@@ -29,9 +29,9 @@ function displayNotes() {
     const groupedEntries = foodEntries.reduce((acc, entry) => {
         const date = entry.time.split('T')[0];
         if (!acc[date]) {
-            acc[date] = []; 
+            acc[date] = [];
         }
-        acc[date].push(entry); 
+        acc[date].push(entry);
         return acc;
     }, {});
 
@@ -40,25 +40,29 @@ function displayNotes() {
         return new Date(dateString).toLocaleDateString('ru-RU', options);
     };
 
-    for (const date in groupedEntries) {
+    // Get the dates as an array and sort them
+    const dates = Object.keys(groupedEntries);
+    dates.sort((a, b) => new Date(a) - new Date(b)); // Sort chronologically
+
+    dates.forEach(date => {
         const dateHeader = document.createElement('h3');
         dateHeader.textContent = formatDate(date);
         notesContainer.appendChild(dateHeader);
 
         groupedEntries[date].forEach(entry => {
             const noteCard = document.createElement('div');
-            noteCard.className = 'col-md-4'; 
-            const [time, additional] = entry.time.split('T'); 
+            noteCard.className = 'col-md-4';
+            const [time, additional] = entry.time.split('T');
             noteCard.innerHTML = `
                 <div class="note-card">
                     <div class="note-time">${additional}</div>
                     <div class="note-title">${entry.name}</div>
-                    <div class="note-calories" style="color: green;">${entry.calories} калорий</div> 
+                    <div class="note-calories" style="color: green;">${entry.calories} калорий</div>
                 </div>
             `;
             notesContainer.appendChild(noteCard);
         });
-    }
+    });
 }
 
 function clearData() {

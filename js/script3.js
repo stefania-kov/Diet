@@ -45,7 +45,6 @@ form.addEventListener('submit', function(event) {
     }
 
     localStorage.setItem('foodEntries', JSON.stringify(foodEntries));
-
     document.getElementById('total-calories').innerText = totalCalories;
 
     const blob = new Blob([JSON.stringify(foodEntries, null, 2)], { type: 'application/json' });
@@ -58,6 +57,7 @@ form.addEventListener('submit', function(event) {
     document.body.removeChild(a);
     URL.revokeObjectURL(url);
 });
+
 
 document.getElementById('clear-button').addEventListener('click', function() {
     const clearModal = new bootstrap.Modal(document.getElementById('clearModal'));
@@ -83,5 +83,3 @@ document.getElementById('confirm-clear').addEventListener('click', function() {
     const clearModal = bootstrap.Modal.getInstance(document.getElementById('clearModal'));
     clearModal.hide();
 });
-
-
