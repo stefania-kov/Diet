@@ -28,26 +28,28 @@ form.addEventListener('submit', function(event) {
     const calories = parseInt(document.getElementById('food-calories').value);
     const foodName = document.getElementById('food-name').value;
     const foodTime = document.getElementById('food-time').value;
-    
+
     totalCalories += calories;
 
-    let foodEntries = JSON.parse(localStorage.getItem('foodEntries')) || [];
-    foodEntries.push({ name: foodName, time: foodTime, calories: calories });
+    let foodEntries = localStorage.getItem('foodEntries') ? localStorage.getItem('foodEntries').split('\n') : []; // Получаем данные из localStorage
+    const newEntry = `${foodName},${foodTime},${calories}`; // Формируем строку для новой записи
 
     const mealTime = document.querySelector('input[name="meal-time"]:checked');
     if (mealTime) {
-        foodEntries[foodEntries.length - 1].mealTime = mealTime.value; 
+      newEntry += `,${mealTime.value}`; // Добавляем время приема пищи, если выбрано
     }
 
-    localStorage.setItem('foodEntries', JSON.stringify(foodEntries));
+    foodEntries.push(newEntry);
+    localStorage.setItem('foodEntries', foodEntries.join('\n'));
 
     document.getElementById('total-calories').innerText = totalCalories;
 
-    const blob = new Blob([JSON.stringify(foodEntries, null, 2)], { type: 'application/json' });
+    const text = foodEntries.join('\n');
+    const blob = new Blob([text], { type: 'text/plain' });
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
     a.href = url;
-    a.download = 'dnevnik.json';
+    a.download = 'dnevnik.txt';
     document.body.appendChild(a);
     a.click();
     document.body.removeChild(a);
