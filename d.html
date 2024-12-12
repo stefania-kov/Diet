@@ -54,6 +54,27 @@
                         <h3 class="mb-2">Результат будет сохранен в файл.</h3>
                         <button class="btn btn-light"  onclick="location.href='2.html'" style="width: 200px;">Открыть дневник</button>
                         <button id="clear-button" class="btn btn-light" type="button" style="width: 200px;">Очистить данные</button>
+                        <div class="modal fade" id="clearModal" tabindex="-1" aria-labelledby="clearModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="clearModalLabel">Очистка данных</h5>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p>Что Вы хотите очистить?</p>
+                                        <select id="clearOption" class="form-select">
+                                            <option value="form">Очистить форму</option>
+                                            <option value="total">Очистить общее количество калорий</option>
+                                            <option value="all">Очистить все</option>
+                                        </select>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Отмена</button>
+                                        <button type="button" class="btn btn-primary" id="confirm-clear">Очистить</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </form>
                 </div>
                 <div class="col-md-6 d-flex flex-column align-items-center">

@@ -9,29 +9,34 @@ textElements.forEach(element => {
         element.style.color = 'black'; 
     });
 });
- 
 
 document.querySelectorAll('button').forEach(button => {
     button.addEventListener('mouseover', function() {
         this.style.transform = 'scale(1.1)';
     });
     button.addEventListener('mouseout', function() {
-        this.style.transform = 'scale(1)';
+        this.style.transform = 'scale(1)'; 
     });
 });
 
 let totalCalories = 0;
 const form = document.getElementById('food-form');
 
+let foodEntries = JSON.parse(localStorage.getItem('foodEntries')) || [];
+
+foodEntries.forEach(entry => {
+    totalCalories += entry.calories;
+});
+document.getElementById('total-calories').innerText = totalCalories;
+
 form.addEventListener('submit', function(event) {
     event.preventDefault();
     const calories = parseInt(document.getElementById('food-calories').value);
     const foodName = document.getElementById('food-name').value;
     const foodTime = document.getElementById('food-time').value;
-    
+
     totalCalories += calories;
 
-    let foodEntries = JSON.parse(localStorage.getItem('foodEntries')) || [];
     foodEntries.push({ name: foodName, time: foodTime, calories: calories });
 
     const mealTime = document.querySelector('input[name="meal-time"]:checked');
@@ -53,3 +58,30 @@ form.addEventListener('submit', function(event) {
     document.body.removeChild(a);
     URL.revokeObjectURL(url);
 });
+
+document.getElementById('clear-button').addEventListener('click', function() {
+    const clearModal = new bootstrap.Modal(document.getElementById('clearModal'));
+    clearModal.show();
+});
+
+document.getElementById('confirm-clear').addEventListener('click', function() {
+    const clearOption = document.getElementById('clearOption').value;
+
+    if (clearOption === 'form') {
+        form.reset();
+    } else if (clearOption === 'total') {
+        totalCalories = 0;
+        document.getElementById('total-calories').innerText = totalCalories;
+    } else if (clearOption === 'all') {
+        totalCalories = 0;
+        foodEntries = [];
+        document.getElementById('total-calories').innerText = totalCalories;
+        form.reset();
+    }
+    localStorage.setItem('foodEntries', JSON.stringify(foodEntries));
+
+    const clearModal = bootstrap.Modal.getInstance(document.getElementById('clearModal'));
+    clearModal.hide();
+});
+
+
