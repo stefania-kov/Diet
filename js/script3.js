@@ -83,3 +83,5 @@ document.getElementById('confirm-clear').addEventListener('click', function() {
     const clearModal = bootstrap.Modal.getInstance(document.getElementById('clearModal'));
     clearModal.hide();
 });
+
+
