@@ -48,7 +48,6 @@ function displayNotes() {
         });
     });
 
-    // Add event listeners for buttons
     const deleteButtons = document.querySelectorAll('.delete-button');
       deleteButtons.forEach(button => {
         button.addEventListener('click', function() {
