@@ -6,7 +6,7 @@ textElements.forEach(element => {
     });
 
     element.addEventListener('mouseout', () => {
-        element.style.color = 'black'; 
+        element.style.color = 'black';
     });
 });
 
@@ -15,7 +15,7 @@ document.querySelectorAll('button').forEach(button => {
         this.style.transform = 'scale(1.1)';
     });
     button.addEventListener('mouseout', function() {
-        this.style.transform = 'scale(1)'; 
+        this.style.transform = 'scale(1)';
     });
 });
 
@@ -24,9 +24,6 @@ const form = document.getElementById('food-form');
 
 let foodEntries = JSON.parse(localStorage.getItem('foodEntries')) || [];
 
-foodEntries.forEach(entry => {
-    totalCalories += entry.calories;
-});
 document.getElementById('total-calories').innerText = totalCalories;
 
 form.addEventListener('submit', function(event) {
@@ -35,13 +32,29 @@ form.addEventListener('submit', function(event) {
     const foodName = document.getElementById('food-name').value;
     const foodTime = document.getElementById('food-time').value;
 
-    totalCalories += calories;
 
-    foodEntries.push({ name: foodName, time: foodTime, calories: calories });
+    const newEntry = { name: foodName, time: foodTime, calories: calories };
+    const isDuplicate = foodEntries.some(entry =>
+        entry.name === newEntry.name &&
+        entry.time === newEntry.time &&
+        entry.calories === newEntry.calories
+    );
 
+    if (isDuplicate) {
+        alert("Дублирование записи не допускается!");
+        return;
+    }
+    
+    foodEntries.push(newEntry); 
+
+    const selectedDate = foodTime.split('T')[0];
+    const filteredEntries = foodEntries.filter(entry => entry.time.split('T')[0] === selectedDate);
+
+
+     totalCalories = filteredEntries.reduce((sum, entry) => sum + entry.calories, 0); 
     const mealTime = document.querySelector('input[name="meal-time"]:checked');
     if (mealTime) {
-        foodEntries[foodEntries.length - 1].mealTime = mealTime.value; 
+        foodEntries[foodEntries.length - 1].mealTime = mealTime.value;
     }
 
     localStorage.setItem('foodEntries', JSON.stringify(foodEntries));

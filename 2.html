@@ -27,8 +27,44 @@
         <div class="container mt-5">
             <h2 class="mb-4">Заметки по питанию</h2>
             <div id="notes" class="row"></div>
-            <button class="btn btn-light mt-3" onclick="clearData()">Очистить данные</button>
+            <button class="btn btn-light mt-3" onclick="clearData()">Очистить данные полностью</button>
+            <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="deleteModalLabel">Подтвердите удаление</h5>
+                    </div>
+                    <div class="modal-body">
+                      Вы уверены, что хотите удалить эту запись?
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-light mt-3" id="deleteConfirmButton">Удалить</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
         </div>
+        <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="editModalLabel">Изменить запись</h5>
+                </div>
+                <div class="modal-body">
+                  <input type="hidden" id="edit-index">
+                  <label for="edit-food-name">Название:</label><br>
+                  <input type="text" id="edit-food-name" required><br>
+                  <label for="edit-food-calories">Калории:</label><br>
+                  <input type="number" id="edit-food-calories" required><br>
+                   <label for="edit-food-time">Время:</label><br>
+                  <input type="datetime-local" id="edit-food-time" required><br>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-light mt-3" id="editSaveButton">Сохранить</button>
+                </div>
+              </div>
+            </div>
+          </div>
     </main>
     <footer style="margin-top: auto;">    
         <div class="container text-center p-4">
