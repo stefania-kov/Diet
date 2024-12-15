@@ -85,12 +85,7 @@ document.getElementById('confirm-clear').addEventListener('click', function() {
     } else if (clearOption === 'total') {
         totalCalories = 0;
         document.getElementById('total-calories').innerText = totalCalories;
-    } else if (clearOption === 'all') {
-        totalCalories = 0;
-        foodEntries = [];
-        document.getElementById('total-calories').innerText = totalCalories;
-        form.reset();
-    }
+    } 
     localStorage.setItem('foodEntries', JSON.stringify(foodEntries));
 
     const clearModal = bootstrap.Modal.getInstance(document.getElementById('clearModal'));
